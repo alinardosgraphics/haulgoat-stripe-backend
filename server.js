@@ -6,7 +6,15 @@ const app = express();
 
 // ✅ CORS config
 app.use(cors({
-  origin: ["https://haulgoat.com", "http://localhost:3000"],
+  app.use(cors({
+  origin: [
+    "https://haulgoat.com",
+    "https://www.haulgoat.com"
+  ],
+  methods: ["POST"],
+  allowedHeaders: ["Content-Type"],
+  credentials: true
+}));
   methods: ["POST", "GET"],
   allowedHeaders: ["Content-Type"]
 }));
